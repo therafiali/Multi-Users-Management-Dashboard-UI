@@ -20,7 +20,7 @@ export default function PaginationControlled() {
         count={10}
         page={page}
         onChange={handleChange}
-        className="text-indigo-500 "
+        className="text-primaryColor "
       />
     </Stack>
   );

@@ -7,7 +7,9 @@ import { cn } from "@/lib/utils";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-export const  BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+// export const  BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+export const BACKEND_URL =
+  "https://wholesome-happiness-development.up.railway.app";
 
 export function Login() {
   const router = useRouter();
@@ -17,12 +19,10 @@ export function Login() {
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
- 
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    console.log("password",password)
   };
 
   // const handleSubmited = (e) => {
@@ -40,7 +40,6 @@ export function Login() {
       data.append("username", email); // Assuming 'username' is the expected field name
       data.append("password", password);
 
-  
       // Make the POST request to the FastAPI backend
       const response = await axios.post(`${BACKEND_URL}/token`, data, {
         headers: {
@@ -55,17 +54,24 @@ export function Login() {
       // console.log("user detail", getDetail.data);
       // Handle successful authentication here
       // go to /dashboard page
+      const thirtyMinutesFromNow = new Date(
+        new Date().getTime() + 30 * 60 * 1000
+      );
+
+      const oneMinuteFromNow = new Date(new Date().getTime() + 1 * 60 * 1000);
+
       Cookies.set("token", response.data.access_token, {
-        expires: 7,
+        expires: 2,
         path: "/",
-      }); // Token expires in 7 days
+      });
+
       router.push("/dashboard");
       // Redirect to another page or update the UI based on the response
     } catch (error) {
       // Handle errors here
-      // 
+      //
       console.error(error.response?.data || error.message);
-     setError(true);
+      setError(true);
     }
   };
 
@@ -101,7 +107,7 @@ export function Login() {
           {error ? "Email or Password is Incorrect" : ""}
         </p>
         <button
-          className="bg-gradient-to-br relative group/btn from-indigo-700 dark:from-indigo-900 dark:to-indigo-900 to-neutral-600 block dark:bg-indigo-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--indigo-800)_inset,0px_-1px_0px_0px_var(--indigo-800)_inset]"
+          className="bg-gradient-to-br relative group/btn from-primaryColor dark:from-primaryColor dark:to-primaryColor to-neutral-600 block dark:bg-primaryColor w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--primaryColor)_inset,0px_-1px_0px_0px_var(--primaryColor)_inset]"
           type="submit"
           onClick={handleSubmit}
         >
@@ -119,7 +125,7 @@ export const BottomGradient = () => {
   return (
     <>
       <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-primaryColor to-transparent" />
     </>
   );
 };

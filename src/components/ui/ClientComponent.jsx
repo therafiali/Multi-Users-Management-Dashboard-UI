@@ -15,14 +15,14 @@ export default function ClientComponent({ children }) {
     if (!token) {
       router.push("/login");
     } else {
-      setAccessToken(token);
-      router.push("/dashboard"); // Adjust this as needed
+      setAccessToken(token); // Adjust this as needed
     }
   }, [router]);
 
-  if (!accessToken) {
-    return <Loader />;
-  }
+  // if (!accessToken) {
+  //   console.log("no token access")
+  //   // return <Loader />;
+  // }
 
   return <>{children}</>;
 }

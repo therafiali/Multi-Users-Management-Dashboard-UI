@@ -152,6 +152,7 @@ export default function PositionedMenu() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+      
       return await response.json();
     } catch (error) {
       console.error("Error fetching user data:", error.message);
@@ -166,6 +167,7 @@ export default function PositionedMenu() {
         setError(result.error);
       } else {
         setData(result.name);
+        localStorage.setItem("userName", result.name);
         if (result.role === "admin") {
           setAdmin(true);
         }

@@ -4,7 +4,7 @@ import PositionedMenu from "./PositionedMenu";
 
 const PageTitle = ({ text }) => {
   return (
-    <div className=" py-4 sm:py-3 zero:py-14  bg-indigo-500 space-y-6">
+    <div className=" py-4 sm:py-3 zero:py-14  bg-primaryColor space-y-6">
       <div className="flex justify-between px-8 items-center">
         <div>
           <h1 className="pl-8 text-xs sm:text-lg font-medium text-white text-center leading-relaxed scroll-m-20 tracking-wider uppercase">

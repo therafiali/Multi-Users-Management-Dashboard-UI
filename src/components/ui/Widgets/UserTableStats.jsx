@@ -94,28 +94,28 @@ const UserTableStats = () => {
   <div className="my-5">
     <div className="flex justify-between my-2">
       <div className="text-sm">Rooms Available</div>
-      <div className="text-sm text-indigo-400">200</div>
+      <div className="text-sm text-primaryColor">200</div>
     </div>
-    <div className="bg-indigo-200 w-full h-2 rounded-full">
-      <div className="bg-indigo-500 w-3/4 h-2 rounded-full" />
+    <div className="bg-primaryColor w-full h-2 rounded-full">
+      <div className="bg-primaryColor w-3/4 h-2 rounded-full" />
     </div>
   </div>
   <div className="my-5">
     <div className="flex justify-between my-2">
       <div className="text-sm">Restaurant Rating</div>
-      <div className="text-sm text-indigo-400">4.5</div>
+      <div className="text-sm text-primaryColor">4.5</div>
     </div>
-    <div className="bg-indigo-200 w-full h-2 rounded-full">
-      <div className="bg-indigo-500 w-1/2 h-2 rounded-full" />
+    <div className="bg-primaryColor w-full h-2 rounded-full">
+      <div className="bg-primaryColor w-1/2 h-2 rounded-full" />
     </div>
   </div>
   <div className="my-5">
     <div className="flex justify-between my-2">
       <div className="text-sm">Spa Rating</div>
-      <div className="text-sm text-indigo-400">4.8</div>
+      <div className="text-sm text-primaryColor">4.8</div>
     </div>
-    <div className="bg-indigo-200 w-full h-2 rounded-full">
-      <div className="bg-indigo-500 w-5/6 h-2 rounded-full" />
+    <div className="bg-primaryColor w-full h-2 rounded-full">
+      <div className="bg-primaryColor w-5/6 h-2 rounded-full" />
     </div>
   </div>
 </div>

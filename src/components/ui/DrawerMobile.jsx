@@ -118,7 +118,7 @@
 //   }, [fetchUserData]);
 
 //   return (
-//     <header className="bg-indigo-500">
+//     <header className="bg-primaryColor">
 //       <nav
 //         aria-label="Global"
 //         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -169,7 +169,7 @@
 //                     <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
 //                       <item.icon
 //                         aria-hidden="true"
-//                         className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+//                         className="h-6 w-6 text-gray-600 group-hover:text-primaryColor"
 //                       />
 //                     </div>
 //                     <div className="flex-auto">
@@ -429,7 +429,7 @@ export default function DrawerMobile() {
   }, []);
 
   return (
-    <header className="bg-indigo-500">
+    <header className="bg-primaryColor">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex space-x-4 lg:hidden">
           <button
@@ -458,13 +458,13 @@ export default function DrawerMobile() {
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                   >
                     <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
+                      <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-primaryColor" />
                     </div>
                     <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-gray-900">
+                      <Link href={item.href} className="block font-semibold text-gray-900">
                         {item.name}
                         <span className="absolute inset-0" />
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-600">{item.description}</p>
                     </div>
                   </div>
@@ -472,7 +472,7 @@ export default function DrawerMobile() {
               </div>
             </PopoverPanel>
           </Popover>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Features
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
@@ -480,13 +480,13 @@ export default function DrawerMobile() {
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Company
-          </a>
+          </a> */}
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
-        </div>
+        </div> */}
       </nav>
       <Dialog open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
@@ -555,11 +555,17 @@ export default function DrawerMobile() {
                       ADMIN SETTINGS
                     </a>
                     <a
+                      href="/dashboard/downloads"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      Downloads
+                    </a>
+                    {/* <a
                       href="/dashboard/profile"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       PROFILE
-                    </a>
+                    </a> */}
                   </div>
                 )}
               </div>

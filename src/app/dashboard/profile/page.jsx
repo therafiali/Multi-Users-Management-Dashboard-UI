@@ -109,7 +109,7 @@
 //                     />
 //                   </div>
 //                 </div>
-//                 <div className="w-1/4 mx-auto rounded-lg bg-indigo-500 hover:bg-white mt-4 text-white hover:text-indigo-500 hover:border hover:border-indigo-500 text-lg font-semibold">
+//                 <div className="w-1/4 mx-auto rounded-lg bg-primaryColor hover:bg-white mt-4 text-white hover:text-primaryColor hover:border hover:border-primaryColor text-lg font-semibold">
 //                   <button type="submit" className="w-full p-2">
 //                     Submit
 //                   </button>
@@ -180,7 +180,7 @@ export default function Page() {
   }, [fetchUserData]);
 
   return (
-    <section className="my-auto bg-indigo-50/70">
+    <section className="my-auto bg-indigo-50/70 h-screen">
       <PageTitle text={"Profile"} />
       {admin ? (
         <div className="py-8 lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
@@ -188,7 +188,7 @@ export default function Page() {
             <div>
               <form>
                 <h2 className="text-center mt-1 font-semibold dark:text-gray-300">
-                  Upload Profile and Cover Image
+                  Update Profile
                 </h2>
                 <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                   <div className="w-full mb-4 mt-6">
@@ -196,16 +196,16 @@ export default function Page() {
                       htmlFor="firstName"
                       className="mb-2 dark:text-gray-300"
                     >
-                      First Name
+                      Username
                     </label>
                     <input
-                      id="firstName"
+                      id="username"
                       type="text"
                       className="mt-2 p-2 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                      placeholder="First Name"
+                      placeholder="umer07"
                     />
                   </div>
-                  <div className="w-full mb-4 lg:mt-6">
+                  {/* <div className="w-full mb-4 lg:mt-6">
                     <label htmlFor="lastName" className="dark:text-gray-300">
                       Last Name
                     </label>
@@ -215,9 +215,9 @@ export default function Page() {
                       className="mt-2 p-2 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
                       placeholder="Last Name"
                     />
-                  </div>
+                  </div> */}
                 </div>
-                <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
+                {/* <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                   <div className="w-full">
                     <h3 className="dark:text-gray-300 mb-2">Sex</h3>
                     <select className="w-full text-grey border-2 rounded-lg p-2 pl-2 pr-2 dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800">
@@ -235,8 +235,8 @@ export default function Page() {
                       className="text-grey p-2 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
                     />
                   </div>
-                </div>
-                <div className="w-1/4 mx-auto rounded-lg bg-indigo-500 hover:bg-white mt-4 text-white hover:text-indigo-500 hover:border hover:border-indigo-500 text-lg font-semibold">
+                </div> */}
+                <div className="w-1/4 mx-auto rounded-lg bg-primaryColor hover:bg-white mt-4 text-white hover:text-primaryColor hover:border hover:border-primaryColor text-lg font-semibold">
                   <button type="submit" className="w-full p-2">
                     Submit
                   </button>

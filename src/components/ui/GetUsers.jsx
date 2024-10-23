@@ -156,7 +156,7 @@
 //                         </LabelInputContainer>
 
 //                         <button
-//                           className="bg-gradient-to-br relative group/btn from-indigo-700 dark:from-indigo-900 dark:to-indigo-900 to-neutral-600 block dark:bg-indigo-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--indigo-800)_inset,0px_-1px_0px_0px_var(--indigo-800)_inset]"
+//                           className="bg-gradient-to-br relative group/btn from-primaryColor dark:from-primaryColor dark:to-primaryColor to-neutral-600 block dark:bg-primaryColor w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--primaryColor)_inset,0px_-1px_0px_0px_var(--primaryColor)_inset]"
 //                           type="submit"
 //                         >
 //                           Add User &rarr;
@@ -302,7 +302,7 @@ const UsersList = () => {
               <TableRow key={user._id}>
                 {/* <TableCell>{user._id}</TableCell> */}
                 <TableCell>{user.name}</TableCell>
-                <TableCell>{user.role}</TableCell>
+                <TableCell className="capitalize">{user.role}</TableCell>
                 <TableCell>
                   <EditUser user_name={user.name} user_role={user.role} _id={user._id} />
                 </TableCell >

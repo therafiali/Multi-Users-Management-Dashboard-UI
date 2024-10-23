@@ -30,14 +30,14 @@ export default function Page() {
     // ... more data objects
   ];
   return (
-    <div className="bg-indigo-50/70">
+    <div className="bg-slate-100/70">
       <PageTitle text={"Admin Settings"} />
       <div className="bg-white m-8 border rounded-md">
         <div className="flex justify-between  items-center py-6 px-6">
-          <h3 className="scroll-m-20 text-xl sm:font-bold tracking-wider text-indigo-500"> Users List</h3>
+          <h3 className="scroll-m-20 text-xl sm:font-bold tracking-wider text-primaryColor"> Users List</h3>
           {/* <button className="">
             <Modal>
-              <ModalTrigger className="px-8 py-2 rounded-md bg-indigo-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-indigo-500">
+              <ModalTrigger className="px-8 py-2 rounded-md bg-primaryColor text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-primaryColor">
                 Add Admin
               </ModalTrigger>
               <ModalBody>
@@ -66,7 +66,7 @@ export default function Page() {
                     />
                   </LabelInputContainer>
                   <button
-                    className="bg-gradient-to-br relative group/btn from-indigo-700 dark:from-indigo-900 dark:to-indigo-900 to-neutral-600 block dark:bg-indigo-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--indigo-800)_inset,0px_-1px_0px_0px_var(--indigo-800)_inset]"
+                    className="bg-gradient-to-br relative group/btn from-primaryColor dark:from-primaryColor dark:to-primaryColor to-neutral-600 block dark:bg-primaryColor w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--primaryColor)_inset,0px_-1px_0px_0px_var(--primaryColor)_inset]"
                     type="submit"
                   >
                     Add User &rarr;
@@ -82,7 +82,7 @@ export default function Page() {
         {/* <PageTables/> */}
       </div>
       <UsersList />
-      {/* <div className="py-6 zero:py-14  bg-indigo-500 space-y-6">
+      {/* <div className="py-6 zero:py-14  bg-primaryColor space-y-6">
         <div className="flex justify-center px-8 items-center">
           <div>
             <h1 className="text-lg zero:text-5xl font-medium text-white text-center leading-relaxed scroll-m-20 tracking-wider ">

@@ -99,7 +99,7 @@ export default function EditUser({user_name,user_role, _id}) {
                 type="radio"
                 checked={role === "user"}
                 onChange={() => setRole("user")}
-                className="w-5 h-5 text-indigo-600 bg-gray-100 focus:ring-indigo-500"
+                className="w-5 h-5 text-primaryColor bg-gray-100 focus:ring-primaryColor"
               />
               <label
                 htmlFor="bordered-radio-1"
@@ -114,7 +114,7 @@ export default function EditUser({user_name,user_role, _id}) {
                 type="radio"
                 checked={role === "admin"}
                 onChange={() => setRole("admin")}
-                className="w-5 h-5 text-indigo-600 bg-gray-100 focus:ring-indigo-500"
+                className="w-5 h-5 text-primaryColor bg-gray-100 focus:ring-primaryColor"
               />
               <label
                 htmlFor="bordered-radio-2"
@@ -125,10 +125,10 @@ export default function EditUser({user_name,user_role, _id}) {
             </div>
             <button
               onClick={submitData}
-              className="bg-gradient-to-br relative group/btn from-indigo-700 dark:from-indigo-900 dark:to-indigo-900 to-neutral-600 block dark:bg-indigo-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--indigo-800)_inset,0px_-1px_0px_0px_var(--indigo-800)_inset]"
+              className="bg-gradient-to-br relative group/btn from-primaryColor dark:from-primaryColor dark:to-primaryColor to-neutral-600 block dark:bg-primaryColor w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--primaryColor)_inset,0px_-1px_0px_0px_var(--primaryColor)_inset]"
               type="button"
             >
-              Add User &rarr;
+              Save Changes &rarr;
               <BottomGradient />
             </button>
           </ModalContent>

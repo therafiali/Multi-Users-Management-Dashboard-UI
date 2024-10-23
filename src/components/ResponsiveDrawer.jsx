@@ -22,6 +22,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import {
   CircleUser,
+  Download,
   Gauge,
   LayoutList,
   ListCheck,
@@ -136,7 +137,7 @@ React.useEffect(() => {
 }, [fetchUserData]);
 
   const drawer = (
-    <div className="bg-indigo-500 h-screen">
+    <div className="bg-primaryColor h-screen">
       <Link href={"/dashboard"}>
         <div className="flex justify-center items-center text-center py-1  bg-white">
           {/* Logo */}
@@ -169,16 +170,16 @@ React.useEffect(() => {
                             {["Dashboard"].map((text, index) => (
                               <Link key={index} href={"/dashboard/dashboard"}>
                                 <ListItem
-                                  className="hover:text-indigo-700 group-hover:bg-white group-hover:rounded-2xl hover:border "
+                                  className="hover:text-primaryColor group-hover:bg-white group-hover:rounded-2xl hover:border "
                                   key={index}
                                   disablePadding
                                 >
                                   <div className="flex space-x-3 justify-center items-center ml-2 px-2 py-2">
-                                    <div className="text-white group-hover:text-indigo-700">
+                                    <div className="text-white group-hover:text-primaryColor">
                                       {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                       {/* <Gauge />
                                     </div>
-                                    <button className="text-white group-hover:text-indigo-700 font-semibold tracking-wide ">
+                                    <button className="text-white group-hover:text-primaryColor font-semibold tracking-wide ">
                                       {" "}
                                       {text}
                                     </button>
@@ -192,11 +193,11 @@ React.useEffect(() => {
                       <Link href={"/dashboard"}>
                         <div className="flex flex-col  px-4  group ">
                           <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                            <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                            <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                               {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                               <Gauge />
                             </div>
-                            <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                            <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                               Dashboard
                             </p>
                           </div>
@@ -205,11 +206,11 @@ React.useEffect(() => {
                       <Link href={"/dashboard/yellowpages"}>
                         <div className="flex flex-col  px-4  group ">
                           <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                            <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                            <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                               {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                               <LayoutList />
                             </div>
-                            <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                            <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                               Yellow Pages
                             </p>
                           </div>
@@ -218,12 +219,12 @@ React.useEffect(() => {
                       <Link href={"/dashboard/article_factory"}>
                         <div className="flex flex-col  px-4  group ">
                           <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                            <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                            <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                               {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
 
                               <LayoutList />
                             </div>
-                            <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                            <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                               Article Factory
                             </p>
                           </div>
@@ -253,11 +254,11 @@ React.useEffect(() => {
                       <Link href={"/dashboard"}>
                         <div className="flex flex-col  px-4  group ">
                           <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                            <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                            <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                               {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                               <Gauge />
                             </div>
-                            <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                            <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                               Dashboard
                             </p>
                           </div>
@@ -266,11 +267,11 @@ React.useEffect(() => {
                       <Link href={"/dashboard/procurement"}>
                         <div className="flex flex-col  px-4  group ">
                           <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                            <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                            <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                               {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                               <ListCheck />
                             </div>
-                            <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                            <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                               Procurement
                             </p>
                           </div>
@@ -281,11 +282,11 @@ React.useEffect(() => {
                       <Link href={"/dashboard/grants_gov"}>
                         <div className="flex flex-col  px-4  group ">
                           <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                            <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                            <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                               {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                               <ListCheck />
                             </div>
-                            <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                            <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                               Grants_gov
                             </p>
                           </div>
@@ -315,32 +316,47 @@ React.useEffect(() => {
                         <Link href={"/dashboard/admin_settings"}>
                           <div className="flex flex-col  px-4  group ">
                             <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                              <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                              <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                                 {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                                 <CircleUser />
                               </div>
-                              <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
+                              <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
                                 Admin Settings
                               </p>
                             </div>
                           </div>
                         </Link>
                       </div>
-                      <div className="mt-1">
-                        <Link href={"/dashboard/profile"}>
+                      <div className="mt-4">
+                        <Link href={"/dashboard/downloads"}>
                           <div className="flex flex-col  px-4  group ">
                             <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
-                              <div className="text-white  group-hover:bg-white group-hover:text-indigo-700">
+                              <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
                                 {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-                                <UserRoundPen />
+                                <Download />
                               </div>
-                              <p className="text-white group-hover:bg-white group-hover:text-indigo-700 font-semibold tracking-wide">
-                                Profile
+                              <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
+                                Downloads
                               </p>
                             </div>
                           </div>
                         </Link>
                       </div>
+                      {/* <div className="mt-1">
+                        <Link href={"/dashboard/profile"}>
+                          <div className="flex flex-col  px-4  group ">
+                            <div className="flex  items-center gap-x-2 group-hover:bg-white rounded-2xl px-4  py-2">
+                              <div className="text-white  group-hover:bg-white group-hover:text-primaryColor">
+                            
+                                <UserRoundPen />
+                              </div>
+                              <p className="text-white group-hover:bg-white group-hover:text-primaryColor font-semibold tracking-wide">
+                                Profile
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div> */}
                     </div>
                   </div>
                 </ListItem>

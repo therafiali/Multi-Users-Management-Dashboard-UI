@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { CircleCheck } from "lucide-react";
 
-
 const CheckIcon = ({ className }) => {
   return (
     <svg
@@ -12,7 +11,7 @@ const CheckIcon = ({ className }) => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={cn("w-6 h-6 bg-orange-400 rounded-full", className)}
+      className={cn("w-8 h-8 bg-orange-400 rounded-full", className)}
     >
       <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
     </svg>
@@ -25,7 +24,7 @@ const CheckFilled = ({ className }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className={cn("w-6 h-6 bg-indigo-500 rounded-full ", className)}
+      className={cn("w-8 h-8 bg-primaryColor rounded-full ", className)}
     >
       <path
         fillRule="evenodd"
@@ -36,10 +35,9 @@ const CheckFilled = ({ className }) => {
   );
 };
 
-
 const LoaderCore = ({ loadingStates, value }) => {
   return (
-    <div className="flex relative justify-start max-w-xl mx-auto flex-col mt-40 ">
+    <div className="flex relative justify-start max-w-xl mx-auto flex-col mt-20 ">
       {loadingStates.map((loadingState, index) => {
         const distance = Math.abs(index - value);
         const opacity = Math.max(1 - distance * 0.2, 0);
@@ -47,18 +45,18 @@ const LoaderCore = ({ loadingStates, value }) => {
         return (
           <motion.div
             key={index}
-            className={cn("text-left flex gap-2 mb-4")}
+            className={cn("text-left flex gap-x-8 gap-y-16  items-center mb-4 my-4")}
             initial={{ opacity: 0, y: -(value * 40) }}
             animate={{ opacity: opacity, y: -(value * 40) }}
             transition={{ duration: 0.5 }}
           >
             <div>
-            {index > value && <CheckIcon className="text-black dark:text-white" />}
+              {index > value && <CheckIcon className="text-black text-2xl dark:text-white" />}
               {index <= value && (
-                <CheckFilled
+                <CheckFilled 
                   className={cn(
                     "text-black dark:text-white",
-                    value === index && "text-black dark:text-lime-500 opacity-100"
+                    value === index && "text-black text-2xl dark:text-lime-500 opacity-100"
                   )}
                 />
               )}
@@ -66,7 +64,7 @@ const LoaderCore = ({ loadingStates, value }) => {
             <span
               className={cn(
                 "text-black dark:text-white",
-                value === index && "text-black dark:text-lime-500 opacity-100"
+                value === index && "text-black text-2xl dark:text-lime-500 opacity-100"
               )}
             >
               {loadingState.text}
@@ -78,7 +76,7 @@ const LoaderCore = ({ loadingStates, value }) => {
   );
 };
 
-export const MultiStepLoader = ({ loadingStates, loading, duration = 2000, loop = false, onComplete }) => {
+export const MultiStepLoader = ({ loadingStates, loading, duration = 60000, loop = false, onComplete }) => {
   const [currentState, setCurrentState] = useState(0);
   const [completed, setCompleted] = useState(false);
 
@@ -88,6 +86,9 @@ export const MultiStepLoader = ({ loadingStates, loading, duration = 2000, loop 
       setCompleted(false);
       return;
     }
+    
+  
+
     const timeout = setTimeout(() => {
       setCurrentState((prevState) => {
         const newState = loop

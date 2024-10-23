@@ -1,9 +1,8 @@
 // components/SameDataComposed.js
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import {
   ComposedChart,
   Line,
-  Area,
   Bar,
   XAxis,
   YAxis,
@@ -11,32 +10,79 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
+import { BACKEND_URL } from "../ui/Login";
 
-const data = [
-  { name: 'Page A', uv: 590, pv: 800, amt: 1400 },
-  { name: 'Page B', uv: 868, pv: 967, amt: 1506 },
-  { name: 'Page C', uv: 1397, pv: 1098, amt: 989 },
-  { name: 'Page D', uv: 1480, pv: 1200, amt: 1228 },
-  { name: 'Page E', uv: 1520, pv: 1108, amt: 1100 },
-  { name: 'Page F', uv: 1400, pv: 680, amt: 1700 },
-];
+const SameDataComposed = () => {
+  const [data, setData] = useState([
+    { name: "Daily", data: 0 },
+    { name: "Weekly", data: 0 },
+    { name: "Monthly", data: 0 },
+    { name: "Yearly", data: 0 },
+  ]);
 
-const SameDataComposed = () => (
-  <ResponsiveContainer width="100%" height={400}>
-    <ComposedChart
-      data={data}
-      margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-    >
-      <CartesianGrid stroke="#f5f5f5" />
-      <XAxis dataKey="name" scale="band" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="uv" barSize={20} fill="#6366f1" />
-      <Line type="monotone" dataKey="pv" stroke="#ff7300" />
-    </ComposedChart>
-  </ResponsiveContainer>
-);
+  async function fetchDailyStats() {
+    const response = await fetch(`${BACKEND_URL}/daily_localwork`);
+    const result = await response.json();
+
+    return result.data;
+  }
+
+  async function fetchWeeklyStats() {
+    const response = await fetch(`${BACKEND_URL}/weekly_localwork`);
+    const result = await response.json();
+
+    return result.data;
+  }
+
+  async function fetchMonthlyStats() {
+    const response = await fetch(`${BACKEND_URL}/monthly_localwork`);
+    const result = await response.json();
+
+    return result.data;
+  }
+
+  async function fetchYearlyStats() {
+    const response = await fetch(`${BACKEND_URL}/yearly_localwork`);
+    const result = await response.json();
+
+    return result.data;
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      const dailyData = await fetchDailyStats();
+      const weeklyData = await fetchWeeklyStats();
+      const monthlyData = await fetchMonthlyStats();
+      const yearlyData = await fetchYearlyStats();
+
+      setData([
+        { name: "Daily", data: dailyData },
+        { name: "Weekly", data: weeklyData },
+        { name: "Monthly", data: monthlyData },
+        { name: "Yearly", data: yearlyData },
+      ]);
+    }
+
+    fetchData();
+  }, []);
+
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <ComposedChart
+        data={data}
+        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+      >
+        <CartesianGrid stroke="#f5f5f5" />
+        <XAxis dataKey="name" scale="band" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="data" barSize={20} fill="#2e3940" />
+        <Line type="monotone" dataKey="data" stroke="#ff7300" />
+      </ComposedChart>
+    </ResponsiveContainer>
+  );
+};
 
 export default SameDataComposed;

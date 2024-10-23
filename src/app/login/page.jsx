@@ -47,7 +47,7 @@ function Page(){
                   width={100}
                   height={100}
                 />
-                <p className="mt-2 text-indigo-500 font-bold tracking-widest text-lg text-center">Mining App</p>
+                <p className="mt-2 text-primaryColor font-bold tracking-widest text-lg text-center">Mining App</p>
               </div>
 
             </div>
