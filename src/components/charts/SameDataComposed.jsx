@@ -15,10 +15,10 @@ import { BACKEND_URL } from "../ui/Login";
 
 const SameDataComposed = () => {
   const [data, setData] = useState([
-    { name: "Daily", data: 0 },
-    { name: "Weekly", data: 0 },
-    { name: "Monthly", data: 0 },
-    { name: "Yearly", data: 0 },
+    { name: "Daily", data: 10 },
+    { name: "Weekly", data: 50 },
+    { name: "Monthly", data: 30 },
+    { name: "Yearly", data: 70 },
   ]);
 
   async function fetchDailyStats() {

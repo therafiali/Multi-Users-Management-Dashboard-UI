@@ -12,7 +12,7 @@ export default function ProfileName({ text = "NA" }) {
   return (
     <Stack direction="row" spacing={2}>
       <Avatar sx={{ bgcolor: 'white', color: '#2e3940' }}>
-        {UserName}
+        {"T"}
       </Avatar>
     </Stack>
   );

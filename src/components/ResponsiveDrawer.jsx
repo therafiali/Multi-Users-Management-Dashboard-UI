@@ -79,62 +79,64 @@ function ResponsiveDrawer(props) {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
-//  useEffect(() => {
-//     async function loadData() {
-//       const result = await fetchUserData();
-//       if (result.error) {
-//         setError(result.error);
-//       } else {
-//         setData(result);
-//         console.log("res:1", result);
-//         if (result.role === "admin") {
-//           setAdmin(true);
-//         }
-//       }
-//       setLoading(false);
-//     }
+  //  useEffect(() => {
+  //     async function loadData() {
+  //       const result = await fetchUserData();
+  //       if (result.error) {
+  //         setError(result.error);
+  //       } else {
+  //         setData(result);
+  //         console.log("res:1", result);
+  //         if (result.role === "admin") {
+  //           setAdmin(true);
+  //         }
+  //       }
+  //       setLoading(false);
+  //     }
 
-//     loadData();
-//   }, [fetchUserData]);
+  //     loadData();
+  //   }, [fetchUserData]);
 
-
-
-const fetchUserData = React.useCallback(async () => {
-  const token = Cookies.get("token");
-  try {
-    const response = await fetch(`${BACKEND_URL}/users/me/`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Error fetching user data:", error.message);
-    return { error: error.message };
-  }
-}, []);
-
-React.useEffect(() => {
-  async function loadData() {
-    const result = await fetchUserData();
-    if (result.error) {
-      setError(result.error);
-    } else {
-      setData(result.name);
-      if (result.role === "admin") {
-        setAdmin(true);
+  const fetchUserData = React.useCallback(async () => {
+    const token = Cookies.get("token");
+    try {
+      const response = await fetch(`${BACKEND_URL}/users/me/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
+      return await response.json();
+    } catch (error) {
+      console.error("Error fetching user data:", error.message);
+      return { error: error.message };
     }
-    setLoading(false);
-  }
+  }, []);
 
-  loadData();
-}, [fetchUserData]);
+  React.useEffect(() => {
+    async function loadData() {
+      const result = {
+        name: "Test User",
+        email: "demo@test.com",
+        role: "admin",
+      };
+      if (result.error) {
+        setError(result.error);
+      } else {
+        setData(result.name);
+        if (result.role === "admin") {
+          setAdmin(true);
+        }
+      }
+      setLoading(false);
+    }
+
+    loadData();
+  }, [fetchUserData]);
 
   const drawer = (
     <div className="bg-primaryColor h-screen">
@@ -365,7 +367,9 @@ React.useEffect(() => {
           </List>
           <div className="flex items-center justify-center h-full mt-12 "></div>
         </div>
-      ) : ""}
+      ) : (
+        ""
+      )}
     </div>
   );
 
@@ -492,6 +496,3 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
-
-
-

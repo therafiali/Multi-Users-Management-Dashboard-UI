@@ -977,7 +977,7 @@ const YellowTablePaginator = ({
 
   useEffect(() => {
     if (selectedRow) {
-      setName(selectedRow.name || "");
+      setName(selectedRow.name || "N/A");
       setPhone(selectedRow.phone || "");
       setAddress(selectedRow.address || "");
       setLink(selectedRow.link || "");
@@ -1123,7 +1123,7 @@ const YellowTablePaginator = ({
             {data.map((row, index) =>
               visibleRows.includes(index) ? (
                 <TableRow key={row.id}>
-                  <TableCell>{row.name}</TableCell>
+                  <TableCell>{row.name || "N/A"}</TableCell>
                   <TableCell>{row.categories || "N/A"}</TableCell>
                   <TableCell>{row.source || "N/A"}</TableCell>
                   <TableCell>

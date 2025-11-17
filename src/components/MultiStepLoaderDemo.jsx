@@ -35,7 +35,7 @@ export function MultiStepLoaderDemo() {
   return (
     <div className="w-full h-[60vh] flex items-center justify-center">
       {/* Core Loader Modal */}
-      <Loader loadingStates={loadingStates} loading={loading} duration={2000} />
+      <Loader loadingStates={loadingStates} loading={loading} duration={5000} />
 
       {/* The buttons are for demo only, remove it in your actual code ⬇️ */}
       <button

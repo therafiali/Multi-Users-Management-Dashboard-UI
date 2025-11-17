@@ -25,37 +25,8 @@ export default function EditUser({user_name,user_role, _id}) {
   const token = Cookies.get("token");
 
   const submitData = async () => {
-    try {
-      let response = await fetch(`${BACKEND_URL}/update_user?id=${id}`, {
-        method: "PUT",
-        body: JSON.stringify({
-          name:username,
-          password: password,
-          role: role,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Add Bearer token to the headers
-        },
-      });
-
-      if (!response.ok) {
-        // Handle non-2xx responses
-        const errorData = await response.json();
-        console.error("Error:", errorData);
-        // alert(`Error: ${errorData.message || "An error occurred"}`);
-        return;
-      }
-
-      const data = await response.json();
-      router.push('/dashboard/admin_settings')
-      window.location.reload();
-    //   alert("User created successfully!");
     
-    } catch (error) {
-      console.error("Fetch error:", error);
-    //   alert("An unexpected error occurred.");
-    }
+alert("Editing User...")
   };
 
   return (
